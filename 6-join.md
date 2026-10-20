@@ -11,5 +11,5 @@ https://sqlzoo.net/wiki/The_JOIN_WC2026
 8. `SELECT city, teamname FROM game JOIN team ON game.team1 = team.id OR game.team2 = team.id WHERE played = '2026-07-01'`
 9. `SELECT teamname, player FROM team JOIN game ON team.id = game.team1 OR team.id = game.team2 JOIN goal ON game.id = goal.game WHERE played = '2026-07-02' AND goal.team = team.id`
 10. `SELECT played, player, pos FROM game JOIN goal ON game.id = goal.game JOIN player ON goal.player = player.playername WHERE city = 'Mexico City'`
-11. ``
-12. ``
+11. `SELECT player, teamname FROM goal JOIN player ON goal.player = player.playername JOIN team ON player.team = team.id WHERE pos = 'DEF';`
+12. `SELECT player, pos, teamname, city FROM goal JOIN player ON goal.player = player.playername JOIN team ON player.team = team.id JOIN game ON goal.game = game.id WHERE gtime BETWEEN 91 AND 120`
